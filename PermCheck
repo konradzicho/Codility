@@ -1,0 +1,12 @@
+def solution(A):
+    count = [1] * (len(A))
+    countdown = len(A)
+    for element in A:
+        if(element>len(A)):
+            return 0
+        if count[element-1] == 1:
+            count[element-1] = 0
+            countdown -= 1          
+            if countdown == 0:
+                return 1
+    return 0
