@@ -1,0 +1,17 @@
+def solution(A):
+    sum_total = sum(A)
+    sum_of_part_array=0
+    sum_of_rest_array=0
+    absolute_difference=3000
+    for element in range(len(A)-1):
+        sum_of_part_array += A[element]
+        sum_of_rest_array= sum_total - sum_of_part_array
+        absolute_difference_temp=0
+        if sum_of_part_array > sum_of_rest_array:
+            absolute_difference_temp= sum_of_part_array - sum_of_rest_array
+        else:
+            absolute_difference_temp = sum_of_rest_array - sum_of_part_array
+        
+        if absolute_difference_temp < absolute_difference:
+            absolute_difference = absolute_difference_temp
+    return absolute_difference
