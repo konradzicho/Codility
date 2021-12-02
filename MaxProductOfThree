@@ -1,0 +1,18 @@
+def solution(A):
+    A.sort()
+    P = A[-1]
+    Q = A[-2]
+    R = A[-3]
+
+    iloraz = P*Q*R
+
+    Q_alt = A[0]
+    R_alt = A[1]
+    iloraz_alt = P*Q_alt*R_alt
+    
+    if iloraz > iloraz_alt:
+        return iloraz
+    else:
+        return iloraz_alt
+
+    pass
